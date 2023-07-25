@@ -6,7 +6,7 @@
 
 ##MyViewModel.java  
 - LiveData: You don't need to save the record manually. Can more flexibly refresh the data.  
-'''
+'''  
   private MutableLiveData<Integer> scoreA;
   public MutableLiveData<Integer> getScoreA() {
         if(scoreA == null){
@@ -18,32 +18,32 @@
 '''  
 ##Build.Gradle
 - Don't forget to add the below sequence.    
-'''
+'''  
   dataBinding.enabled true
 '''
 
 ##MainActivity.java  
 - Using Binding and ViewModel  
-'''
-  binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-  myViewModel = new ViewModelProvider(this).get(MyViewModel.class);
-  binding.setData(myViewModel);
-  binding.setLifecycleOwner(this);
+'''  
+  binding = DataBindingUtil.setContentView(this, R.layout.activity_main);  
+  myViewModel = new ViewModelProvider(this).get(MyViewModel.class);  
+  binding.setData(myViewModel);  
+  binding.setLifecycleOwner(this);  
 '''
 ##Activity_Main.xml  
 - Covert to binding configuration.  
-'''
-   <data>
-        <variable
-            name="data"
-            type="com.example.recorderdemo.MyViewModel" />
+'''  
+   <data>  
+        <variable  
+            name="data"  
+            type="com.example.recorderdemo.MyViewModel" />  
 
-    </data>
+    </data>  
  '''   
-- Then you can set the UI function as below.  
-'''
-  android:text="@{String.valueOf(data.scoreA)}"
-  android:text="@{String.valueOf(data.scoreB)}"
-  android:onClick="@{()->data.teamAadd(1)}"
-  android:onClick="@{()->data.teamAadd(2)}"
+- Then you can set the UI function as below.    
+'''  
+  android:text="@{String.valueOf(data.scoreA)}"  
+  android:text="@{String.valueOf(data.scoreB)}"  
+  android:onClick="@{()->data.teamAadd(1)}"  
+  android:onClick="@{()->data.teamAadd(2)}"  
  ''' 
