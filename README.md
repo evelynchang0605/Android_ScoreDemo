@@ -5,7 +5,7 @@
 - Combine the 'DataBinding' and 'LiveData' functions.
 
 ##MyViewModel.java  
-- LiveData: You don't need to save the record manually. Can more flexibly refresh the data.
+- LiveData: You don't need to save the record manually. Can more flexibly refresh the data.  
 '''
   private MutableLiveData<Integer> scoreA;
   public MutableLiveData<Integer> getScoreA() {
@@ -17,13 +17,13 @@
     }
 '''  
 ##Build.Gradle
-- Don't forget to add the below sequence.  
+- Don't forget to add the below sequence.    
 '''
   dataBinding.enabled true
 '''
 
 ##MainActivity.java  
-- Using Binding and ViewModel
+- Using Binding and ViewModel  
 '''
   binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
   myViewModel = new ViewModelProvider(this).get(MyViewModel.class);
@@ -31,7 +31,7 @@
   binding.setLifecycleOwner(this);
 '''
 ##Activity_Main.xml  
-- Covert to binding configuration.
+- Covert to binding configuration.  
 '''
    <data>
         <variable
@@ -40,7 +40,7 @@
 
     </data>
  '''   
-- Then you can set the UI function as below.
+- Then you can set the UI function as below.  
 '''
   android:text="@{String.valueOf(data.scoreA)}"
   android:text="@{String.valueOf(data.scoreB)}"
