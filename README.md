@@ -23,7 +23,7 @@
 ``` 
 
 ## MainActivity.java  
-- Using Binding and ViewModel
+- Using Binding and ViewModel.
 ```  
   binding = DataBindingUtil.setContentView(this, R.layout.activity_main);  
   myViewModel = new ViewModelProvider(this).get(MyViewModel.class);  
