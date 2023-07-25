@@ -1,6 +1,9 @@
 # Android_ScoreDemo
 - Recorded Score App
 - ![Screenshot_20230725_163345](https://github.com/evelynchang0605/Android_ScoreDemo/assets/137132532/e61decb5-b023-4790-bb7b-41d190f4516a)
+
+
+
 - Combine the 'DataBinding' and 'LiveData' functions.
 
 #MyViewModel.java
